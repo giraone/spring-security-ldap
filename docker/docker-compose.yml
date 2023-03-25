@@ -1,0 +1,30 @@
+version: "3.5"
+
+# See https://hub.docker.com/r/bitnami/openldap/
+
+services:
+  openldap:
+    image: bitnami/openldap:latest
+    hostname: openldap
+    container_name: openldap
+    volumes:
+      - "./openldap-data:/bitnami/openldap"
+      - "./ldifs:/ldifs"
+    ports:
+      - "1389:1389"
+      - "1636:1636"
+    environment:
+      - LDAP_ROOT=dc=example,dc=org
+      - LDAP_ALLOW_ANON_BINDING=no
+#      - LDAP_CONFIG_ADMIN_ENABLED=yes
+#      - LDAP_CONFIG_ADMIN_USERNAME=manager
+#      - LDAP_CONFIG_ADMIN_PASSWORD=secret
+      - LDAP_CUSTOM_LDIF_DIR=/ldifs
+      - LDAP_LOGLEVEL=448
+      - LDAP_ADMIN_USERNAME=manager
+      - LDAP_ADMIN_PASSWORD=secret
+#      - LDAP_USER_DC=users
+#      - LDAP_GROUP=USER
+#      - LDAP_USERS=admin,user1,user2,user3,other
+#      - LDAP_PASSWORDS=admin,user1,user2,user3,other
+

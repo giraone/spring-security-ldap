@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: spring-webmvc-security-ldap
+  ldap:
+    urls: 'ldap://localhost:1389/dc=example,dc=org'
+    username: 'cn=admin,dc=example,dc=org'
+    password: 'secret'
+
+ldap:
+  url: 'ldap://localhost:1389'
+  urlPath: 'dc=example,dc=org'
+  managerDn: 'cn=manager,dc=example,dc=org'
+  managerPw: 'secret'
+  userDnPatterns: 'cn={0},ou=users,dc=example,dc=org'
+  passwordAttribute: 'userPassword'
+  groupSearchBase: 'ou=groups,dc=example,dc=org'
+  groupSearchFilter: 'member={0}'
+
+
+logging:
+  level:
+    ROOT: WARN
+    org.springframework.security: DEBUG
+    org.springframework.ldap: DEBUG
+    com.giraone: INFO

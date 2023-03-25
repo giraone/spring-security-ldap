@@ -1,0 +1,89 @@
+dn: dc=example,dc=org
+dc: example
+objectclass: top
+objectClass: dcObject
+objectClass: organization
+o: example
+
+dn: ou=users,dc=example,dc=org
+ou: users
+objectclass: top
+objectClass: organizationalUnit
+
+dn: ou=groups,dc=example,dc=org
+ou: groups
+objectclass: top
+objectClass: organizationalUnit
+
+dn: cn=admin,ou=users,dc=example,dc=org
+userPassword: admin
+uid: admin
+objectclass: top
+objectclass: organizationalPerson
+objectClass: inetOrgPerson
+sn: Admin
+cn: admin
+
+dn: cn=user1,ou=users,dc=example,dc=org
+userPassword: user1
+uid: user1
+objectclass: top
+objectclass: organizationalPerson
+objectClass: inetOrgPerson
+sn: User1
+cn: user1
+
+dn: cn=user2,ou=users,dc=example,dc=org
+userPassword: user2
+uid: user2
+objectclass: top
+objectclass: organizationalPerson
+objectClass: inetOrgPerson
+sn: User2
+cn: user2
+
+dn: cn=user3,ou=users,dc=example,dc=org
+userPassword: user3
+uid: user3
+objectclass: top
+objectclass: organizationalPerson
+objectClass: inetOrgPerson
+sn: User3
+cn: user3
+
+dn: cn=other,ou=users,dc=example,dc=org
+userPassword: other
+uid: other
+objectclass: top
+objectclass: organizationalPerson
+objectClass: inetOrgPerson
+sn: Other
+cn: other
+
+dn: cn=USER,ou=groups,dc=example,dc=org
+objectclass: top
+objectClass: groupOfNames
+cn: USER
+member: cn=user1,ou=users,dc=example,dc=org
+member: cn=user2,ou=users,dc=example,dc=org
+member: cn=user3,ou=users,dc=example,dc=org
+
+dn: cn=ADMIN,ou=groups,dc=example,dc=org
+objectclass: top
+objectClass: groupOfNames
+cn: ADMIN
+member: cn=admin,ou=users,dc=example,dc=org
+
+dn: cn=A1,ou=groups,dc=example,dc=org
+objectclass: top
+objectClass: groupOfNames
+cn: A1
+member: cn=user1,ou=users,dc=example,dc=org
+member: cn=user2,ou=users,dc=example,dc=org
+
+dn: cn=A2,ou=groups,dc=example,dc=org
+objectclass: top
+objectClass: groupOfNames
+cn: A2
+member: cn=user3,ou=users,dc=example,dc=org
+
